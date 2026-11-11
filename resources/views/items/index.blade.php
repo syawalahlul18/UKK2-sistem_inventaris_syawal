@@ -1,4 +1,6 @@
+@extends('layouts.app')
 
+@section('content')
     <h2 class="font-bold mb-4">Daftar Barang</h2>
 
     @if(session('pesan'))
@@ -52,7 +54,18 @@
         <button type="submit" class="bg-blue-500 text-white p-2">Simpan Barang</button>
     </form>
 
-    
+    <table class="w-full border">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="border p-2">Kode</th>
+                <th class="border p-2">Nama</th>
+                <th class="border p-2">Kategori</th>
+                <th class="border p-2">Lokasi</th>
+                <th class="border p-2">Stok</th>
+                <th class="border p-2">Kondisi</th>
+                <th class="border p-2">Aksi</th>
+            </tr>
+        </thead>
         <tbody>
             @forelse($items as $b)
                 <tr>
@@ -78,3 +91,4 @@
             @endforelse
         </tbody>
     </table>
+@endsection
